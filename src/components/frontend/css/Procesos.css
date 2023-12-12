@@ -1,0 +1,582 @@
+
+
+  /* Procesos.css */
+.form-container {
+    background-color: #ececec;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
+    max-width: 100% !important;
+    margin-left: 11%;
+    margin-bottom: 5%;
+    float: left; /* Float the form to the left */
+    margin-right: 2%;
+    margin-top: 6%;
+
+  }
+
+/* CSS */
+option:checked::before {
+  content: '\2713'; /* Unicode checkmark character */
+  margin-right: 5px;
+  color: green; /* Change color as needed */
+}
+
+.form-containero{
+  background-color: #f2f2f2;
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 5px;
+  margin-left: 47%;
+  margin-right: 5%;
+  margin-top: 6%;
+  position: absolute;
+}
+
+
+
+.table {
+  float: right; /* Float the table to the right */
+  width: 93%; /* Adjust the width as needed */
+  margin-top: 50px; /* Add some spacing between form and table */
+}
+
+
+
+
+  
+
+  
+  
+
+  
+  
+  .form-title {
+    text-align: center;
+    color: #333;
+    font-size: 20px;
+  }
+  
+  .form-field {
+    margin: 10px 0;
+  }
+
+  .fff{
+    padding-bottom: 10px;
+    padding-top: 10px;
+  }
+  .other-department {
+    background-color: rgb(74, 65, 207) !important; /* Un color de fondo llamativo */
+    color: #ffffff; /* Un color de texto que contraste */
+    font-weight: bold; /* Hacer el texto más grueso */
+  }  
+
+  .other-department-selected {
+    background-color: rgb(4, 5, 54) !important; /* Un color de fondo distinto cuando está seleccionado */
+    color: white; /* Un color de texto que contraste */
+    /* Otros estilos que quieras aplicar cuando esté seleccionado */
+  }
+
+  
+  input[type="text"] {
+    width: 90%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  
+  .next-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+
+  .next-butt {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-left: 40px;
+  }
+  
+  .next-buttono {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-right: 15px;
+  }
+  .next-button:hover {
+    background-color: #007bff;
+  }
+
+  /* CSS */
+/* Style the label */
+.form-field label {
+  font-weight: bold;
+  display: block; /* Make the label a block element for better spacing */
+  margin-bottom: 5px; /* Add spacing between label and select element */
+}
+
+/* Style the select element */
+.form-field select {
+  width: 100%; /* Make the select element fill its container width */
+  padding: 10px; /* Add some padding for better appearance */
+  border: 1px solid #ccc; /* Add a border */
+  border-radius: 4px; /* Round the corners */
+  background-color: #fff; /* Set a background color */
+  font-size: 16px; /* Adjust the font size */
+}
+
+/* Style the options within the select element */
+.form-field select option {
+  font-size: 16px; /* Adjust the font size */
+}
+
+.date-input {
+  /* Agrega tus estilos personalizados aquí */
+  width: 91%; /* Ancho deseado */
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 13px;
+  /* Otros estilos de diseño que desees aplicar */
+}
+
+.date-inputo{
+  width: 96% !important;
+}
+
+.form-fieldo{
+  height: 70px;
+}
+
+.page-container {
+  display: flex;
+  justify-content: center; /* Centra horizontalmente los elementos */
+  align-items: center; /* Centra verticalmente los elementos */
+  height: 100vh; /* Esto asegura que el contenedor ocupe toda la altura de la ventana */
+}
+
+.image-container {
+  position: relative; /* Permite el posicionamiento relativo para el botón */
+}
+
+.bot {
+  width: 60%;
+  margin-left: 17%;
+  border-radius: 30px;
+}
+
+.custom-button {
+  position: absolute; /* Posicionamiento absoluto para el botón */
+  bottom: 16%; /* Ajusta la distancia desde la parte inferior según tus preferencias */
+  left: 30%; /* Lo mueve al centro horizontalmente */
+  transform: translateX(-50%);
+  border-radius: 30px;
+  font-size: 30px;
+  padding: 10px;
+}
+
+.trouble{
+  font-size: 15px;
+  margin: 20px;
+}
+
+
+.nombre {
+  width: 100px ;
+  margin-left: 40px!important;
+  margin-right: 0 !important;
+
+}
+
+
+.nombres{
+  width: 100px;
+  margin-right: 60px!important;
+  margin-left: 10px!important;
+  height: 2px;
+
+}
+
+
+/* Procesos.css */
+
+/* Add this class for the tools section */
+.tools-container {
+  margin-top: 10px;
+}
+
+/* Style for the input field to add tools */
+.tools-input {
+  width: 200px;
+  padding: 8px;
+  margin-right: 10px;
+}
+
+.tools-buttons {
+  margin-top: 5px;
+}
+
+.added-tools {
+  margin-top: 10px;
+}
+
+.added-tools p {
+  font-weight: bold;
+}
+
+.added-tools ul {
+  list-style: none;
+  border: 2px solid #007bff;
+  border-radius: 23px;
+  padding: 10px; /* Añadir relleno para separar el texto del borde */
+}
+
+
+.tools-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.tools-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px; /* Ajusta el margen inferior para separar del formulario */
+}
+
+.toti {
+  margin-left: 12px;
+  border-radius: 70px;
+  color: #000000;
+  background-color: rgb(218, 213, 213);
+}
+
+.added-tools {
+  margin-top: 10px;
+}
+
+.tottis{
+  margin-right: 10px;
+  margin-bottom: 15px;
+  background-color: #17385a;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-right: 15px;
+}
+
+.totti{
+  margin-right: 10px;
+  margin-bottom: 15px;
+  background-color: #17385a;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-right: 15px;
+}
+
+.tot{
+  margin-bottom: 10px;
+}
+
+.totti:hover{
+  background-color: #007bff;
+  transition: 0.6s;
+}
+
+.tottis:hover{
+  background-color: #007bff;
+  transition: 0.6s;
+}
+
+
+.department-buttons {
+  display: grid;
+  grid-template-rows: repeat(2, 1fr); /* Crea dos filas */
+  grid-auto-flow: column; /* Ajusta los elementos en columnas dentro de las filas */
+  grid-gap: 15px; /* Espaciado entre botones */
+  margin-bottom: 20px;
+}
+
+.department-button {
+  padding: 6px;
+  border: 1px solid #ccc;
+  background-color: #aacbee;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-radius: 40px;
+  font-size: 12px;
+}
+
+.department-button.selected {
+  background-color:  #03274e;
+  color: white;
+}
+
+.depar{
+  margin-bottom: 20px;
+}
+
+
+.email{
+  width: 91%; /* Ancho deseado */
+  height: 3vh;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 13px;
+}
+
+.extra-form{
+  margin-bottom: 20px;
+}
+
+.agregar{
+  padding: 6px;
+  border: 1px solid #ccc;
+  background-color:  #03274e;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-radius: 40px;
+  font-size: 12px;
+  color: #ffffff;
+  margin-top: 10px;
+  padding: 10px;
+}
+
+
+
+
+.info-icon {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  border-radius: 50%;
+  background-color: #5c5b5b;
+  color: white;
+  cursor: help;
+  position: relative;
+  margin-right: 30px;
+}
+
+.tooltip {
+  visibility: hidden;
+  width: 300px;
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 12px 10px;
+  border-radius: 6px;
+  position: absolute;
+  z-index: 1;
+  top: -5px;
+  left: 150%;
+}
+
+.info-icon:hover .tooltip {
+  visibility: visible;
+}
+
+.suite{
+  margin-bottom: 10px;
+}
+
+.comentario-container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f7f7f7;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-top: 10%;
+
+}
+
+.comentario-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.comentario-container h2 {
+  margin-bottom: 15px;
+  color: #333;
+  font-size: 1.5em;
+}
+
+.comentario-container textarea {
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  resize: vertical; /* Permite al usuario ajustar la altura del textarea */
+}
+
+.comentario-container button {
+  padding: 10px 15px;
+  background-color: #0056b3;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.comentario-container button:hover {
+  background-color: #003d82;
+}
+
+.mensaje-exito {
+  color: green;
+  margin-top: 7%;
+  margin-left: 27%;
+  font-size: 18px;
+}
+
+
+.sector{
+  width: 95% !important;
+}
+
+
+
+.titulo-herramientas {
+  display: flex;
+  align-items: center;
+}
+
+.info-icon {
+  margin-left: 10px;
+}
+
+
+
+.herramientas-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* Crea dos columnas */
+  gap: 10px; /* Espacio entre las columnas y filas */
+}
+
+.herramienta-container {
+  background-color: #b9cee4;
+  border-radius: 50px;
+  color: #000000;
+  margin-bottom: 10px; /* Espacio en la parte inferior de cada contenedor */
+  font-size: 13px;
+  text-align: center;
+  height: 20px;
+  padding: 5px;
+  width: 60px; /* Ancho de cada contenedor */
+}
+
+
+.herramienta.selected {
+  background-color: #3618bd; 
+  color: #ffffff;
+  padding: 5px;
+  border-radius: 50px;
+  width: 60px;
+  height: 20px;
+}
+
+
+
+
+
+
+/* Estilo General del Contenedor */
+.resumen-container {
+  font-family: 'Arial', sans-serif;
+  color: #333;
+  background-color: #f4f4f4;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+  max-width: 1000px;
+  margin: auto;
+  margin-top: 4%;
+}
+
+
+.info{
+  text-align: justify;
+  margin-left: 30%;
+}
+
+.title{
+  margin-left: 30%;
+}
+
+.padding{
+  padding: 30px;
+}
+
+.resumen-titulo{
+  margin-left: 30%;
+}
+
+
+
+/* Estilos para las Flechas de Navegación del Slider */
+.resumen-container .slick-slider .slick-prev,
+.resumen-container .slick-slider .slick-next {
+  font-size: 30px; /* Tamaño de las flechas */
+  z-index: 1;
+}
+
+.resumen-container .slick-slider .slick-prev:before,
+.resumen-container .slick-slider .slick-next:before {
+  font-size: 40px; /* Tamaño del ícono de la flecha */
+  color: #1f60da; /* Color de las flechas */
+  position: absolute;
+}
+
+.resumen-container .slick-slider .slick-prev {
+  left: -20px; /* Ajusta la posición si es necesario */
+}
+
+.resumen-container .slick-slider .slick-next {
+  right: -1px; /* Ajusta la posición si es necesario */
+}
+
+/* Estilos para el contenedor de procesos */
+.procesos-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start; /* Alinea los elementos al inicio (izquierda) */
+  gap: 28px; /* Espacio entre bloques */
+  max-width: 800px; /* Ancho máximo para el contenedor, ajústalo según necesidades */
+}
+
+/* Estilos para cada proceso individual */
+.proceso {
+  min-width: 333px; /* Mínimo ancho para cada bloque de proceso */
+  background-color: #f4f4f4;
+  padding: 15px;
+  border: 3px solid #ddd;
+  border-radius: 4px;
+}
+
+
+.edit-icon {
+  margin-left: 10px;
+  color: #007bff; /* O el color que prefieras */
+  cursor: pointer;
+}
+
+.edit-icon:hover {
+  color: #0056b3; /* Un color más oscuro al pasar el mouse */
+}
