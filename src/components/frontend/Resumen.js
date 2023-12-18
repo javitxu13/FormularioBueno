@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+/* import React, { useContext } from 'react';
 import Slider from 'react-slick';
 import { FormDataContext } from './FormDataContext';
 import 'slick-carousel/slick/slick.css';
@@ -106,7 +106,6 @@ const Resumen = () => {
           <p>Departamentos: {infoBasica.departamentos?.join(', ')}</p>
         </div>
 
-        {/* Herramientas de Software Section */}
         <div className='info'>
           <h3>Herramientas de Software</h3>
           <p>¿Trabaja con ERP?: {herramientasSoftware.trabajaConERP}</p>
@@ -124,14 +123,12 @@ const Resumen = () => {
           </div>
         </div>
 
-        {/* Process Automation Section */}
         {renderProcessAutomation()}
 
-        {/* Horario Section */}
         {renderHorario()}
       </Slider>
     </div>
   );
 };
 
-export default Resumen;
+export default Resumen; */

@@ -51,11 +51,11 @@ function Tiempo() {
   };
 
   if (redirect) {
-    return <Navigate to="/resumen" />;
+    return <Navigate to="/comentarios" />;
   }
 
   return (
-    <div className="form-container">
+    <div className="form-containert">
       <h2 className="form-title">Formulario de tiempo</h2>
       <form onSubmit={handleSubmit}>
         <div className="form-field">

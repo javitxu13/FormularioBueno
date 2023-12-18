@@ -134,8 +134,9 @@ function ProcessAutomationComponent() {
     const { nombreProceso, personasIntervienen, tiempoEstimado, herramientasIntervienen, showToolsInput, herramientasList } = state;
 
     return (
-      <form className="form-container" onSubmit={handleSubmit}>
+      <form className="form-containerProcesos" onSubmit={handleSubmit}>
         <h2 className="form-title">Formulario de Automatización de Procesos</h2>
+        <p className='parrafo'>Este formulario le permite agregar los procesos que desee, ofreciendo una personalización completa para adaptarse a las necesidades específicas de su empresa y garantizar una integración eficiente.</p>
         <div className="form-field">
           <label htmlFor="nombreProceso">Nombre del proceso</label>
           <input
@@ -208,7 +209,7 @@ function ProcessAutomationComponent() {
         )}
         {state.currentStage === 1 && (
           <div>
-            <button type="button" className="next-buttono" onClick={handleAddProcess}>
+            <button type="button" className="next-button" onClick={handleAddProcess}>
               Añadir Proceso
             </button>
             <button type="button" className="next-button" onClick={handleNext}>
@@ -285,7 +286,7 @@ function ProcessAutomationComponent() {
                 <td>
                   {index === editingIndex ? (
                     <input
-                      className="nombres"
+                      className="herr"
                       type="text"
                       name="herramientasIntervienen"
                       value={state.herramientasIntervienen}

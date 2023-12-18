@@ -1,5 +1,6 @@
 const InfoBasica = require('../models/InfoBasicaModel');
 
+
 const guardarInfoBasica = async (req, res) => {
   try {
     const info = new InfoBasica(req.body);

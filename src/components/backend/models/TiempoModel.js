@@ -5,7 +5,6 @@ const TiempoSchema = new mongoose.Schema({
   fechaFinalizacion: Date,
   moneda: String,
   presupuestoRango: String,
-  comentarios: String
 });
 
 module.exports = mongoose.model('Tiempo', TiempoSchema);

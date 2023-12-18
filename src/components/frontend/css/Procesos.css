@@ -1,3 +1,9 @@
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #e8ffd0;
+  color: #333;
+  line-height: 1.6;
+}
 
 
   /* Procesos.css */
@@ -12,7 +18,29 @@
     float: left; /* Float the form to the left */
     margin-right: 2%;
     margin-top: 6%;
+    background-color: #f3f3f3 ;
 
+  }
+
+  .form-containert {
+    background-color: #ececec;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
+    width: 400px !important;
+    margin-left: 11%;
+    margin-bottom: 5%;
+    float: left; /* Float the form to the left */
+    margin-right: 2%;
+    margin-top: 6%;
+    background-color: #f3f3f3 ;
+
+  }
+  .parrafo{
+    width: 400px;
+    padding: 20px;
+    font-size: 15px;
+    border: 2px solid rgb(170, 170, 170);
   }
 
 /* CSS */
@@ -25,10 +53,9 @@ option:checked::before {
 .form-containero{
   background-color: #f2f2f2;
   border: 1px solid #ccc;
-  padding: 20px;
+  padding: 30px;
   border-radius: 5px;
-  margin-left: 47%;
-  margin-right: 5%;
+  margin-left: 44%;
   margin-top: 6%;
   position: absolute;
 }
@@ -37,19 +64,10 @@ option:checked::before {
 
 .table {
   float: right; /* Float the table to the right */
-  width: 93%; /* Adjust the width as needed */
+  width: 53%; /* Adjust the width as needed */
   margin-top: 50px; /* Add some spacing between form and table */
 }
 
-
-
-
-  
-
-  
-  
-
-  
   
   .form-title {
     text-align: center;
@@ -59,22 +77,22 @@ option:checked::before {
   
   .form-field {
     margin: 10px 0;
+    
   }
 
   .fff{
     padding-bottom: 10px;
     padding-top: 10px;
+    
   }
   .other-department {
-    background-color: rgb(74, 65, 207) !important; /* Un color de fondo llamativo */
-    color: #ffffff; /* Un color de texto que contraste */
+    background-color: rgb(17, 0, 255) !important; /* Un color de fondo llamativo */
+    color: #ffffff !important; /* Un color de texto que contraste */
     font-weight: bold; /* Hacer el texto más grueso */
   }  
 
-  .other-department-selected {
-    background-color: rgb(4, 5, 54) !important; /* Un color de fondo distinto cuando está seleccionado */
-    color: white; /* Un color de texto que contraste */
-    /* Otros estilos que quieras aplicar cuando esté seleccionado */
+  .other-department.selected{
+    background-color: rgb(2, 15, 87) !important;
   }
 
   
@@ -92,29 +110,13 @@ option:checked::before {
     padding: 10px 20px;
     border-radius: 3px;
     cursor: pointer;
-  }
-
-  .next-butt {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 3px;
-    cursor: pointer;
-    margin-left: 40px;
+    margin-left: 10px;
+    margin-top: 7px;
   }
   
-  .next-buttono {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 3px;
-    cursor: pointer;
-    margin-right: 15px;
-  }
+
   .next-button:hover {
-    background-color: #007bff;
+    background-color: #0857ac;
   }
 
   /* CSS */
@@ -169,51 +171,27 @@ option:checked::before {
   position: relative; /* Permite el posicionamiento relativo para el botón */
 }
 
-.bot {
-  width: 60%;
-  margin-left: 17%;
-  border-radius: 30px;
-}
 
-.custom-button {
-  position: absolute; /* Posicionamiento absoluto para el botón */
-  bottom: 16%; /* Ajusta la distancia desde la parte inferior según tus preferencias */
-  left: 30%; /* Lo mueve al centro horizontalmente */
-  transform: translateX(-50%);
-  border-radius: 30px;
-  font-size: 30px;
-  padding: 10px;
-}
 
-.trouble{
-  font-size: 15px;
-  margin: 20px;
-}
 
 
 .nombre {
   width: 100px ;
-  margin-left: 40px!important;
-  margin-right: 0 !important;
+  height: 20px;
+  list-style-type: none;
 
 }
 
 
 .nombres{
   width: 100px;
-  margin-right: 60px!important;
-  margin-left: 10px!important;
-  height: 2px;
+  height: 5px;
+  list-style-type: none;
+
 
 }
 
 
-/* Procesos.css */
-
-/* Add this class for the tools section */
-.tools-container {
-  margin-top: 10px;
-}
 
 /* Style for the input field to add tools */
 .tools-input {
@@ -233,13 +211,27 @@ option:checked::before {
 .added-tools p {
   font-weight: bold;
 }
+.added-tools ul {
+  list-style: none;
+  padding-left: 0; /* Remove default padding */
+}
 
 .added-tools ul {
   list-style: none;
-  border: 2px solid #007bff;
-  border-radius: 23px;
-  padding: 10px; /* Añadir relleno para separar el texto del borde */
+  padding-left: 0; /* Remove default padding */
 }
+
+.added-tools ul li {
+  display: inline-block; /* Makes the background color wrap around the text */
+  margin-left: 20px; /* Space between items */
+  background-color: #003d82; /* Background color */
+  color: #ffff; /* Text color */
+  padding: 10px; /* Padding around the text for better visual appearance */
+  margin-bottom: 10px; /* Space below each item */
+  border-radius: 50px; /* Rounded corners */
+}
+
+
 
 
 .tools-container {
@@ -262,6 +254,7 @@ option:checked::before {
 
 .added-tools {
   margin-top: 10px;
+  
 }
 
 .tottis{
@@ -292,6 +285,12 @@ option:checked::before {
   margin-bottom: 10px;
 }
 
+.herr{
+  height: 5px;
+  width: 80px !important;
+  list-style-type: none;
+}
+
 .totti:hover{
   background-color: #007bff;
   transition: 0.6s;
@@ -312,17 +311,18 @@ option:checked::before {
 }
 
 .department-button {
-  padding: 6px;
+  padding: 8px;
   border: 1px solid #ccc;
-  background-color: #aacbee;
+  background-color: #b9cee4;
   cursor: pointer;
   transition: background-color 0.3s ease;
   border-radius: 40px;
   font-size: 12px;
+  color: #000000;
 }
 
 .department-button.selected {
-  background-color:  #03274e;
+  background-color: #3618bd;
   color: white;
 }
 
@@ -463,10 +463,9 @@ option:checked::before {
 }
 
 
-
 .herramientas-container {
   display: grid;
-  grid-template-columns: repeat(5, 1fr); /* Crea dos columnas */
+  grid-template-columns: repeat(5, 1fr); /* Crea cinco columnas */
   gap: 10px; /* Espacio entre las columnas y filas */
 }
 
@@ -476,24 +475,30 @@ option:checked::before {
   color: #000000;
   margin-bottom: 10px; /* Espacio en la parte inferior de cada contenedor */
   font-size: 13px;
-  text-align: center;
-  height: 20px;
-  padding: 5px;
-  width: 60px; /* Ancho de cada contenedor */
+  height: 30px;
+  width: 70px; /* Ancho de cada contenedor */
+  cursor: pointer;
+  display: flex; /* Flexbox for alignment */
+  justify-content: center; /* Horizontally center the content */
+  align-items: center; /* Vertically center the content */
+  text-align: center; /* Ensures text is centered if it wraps */
+  border: 1px solid #ccc;
+
 }
 
 
 .herramienta.selected {
-  background-color: #3618bd; 
-  color: #ffffff;
-  padding: 5px;
-  border-radius: 50px;
-  width: 60px;
-  height: 20px;
+  background-color: #3618bd;
+  color: #ffffff; /* Changes text color to white for better visibility */
+  border-radius: 50px; /* Matches the border-radius of .herramienta-container */
+  height: 30px; /* Ensures height is the same as .herramienta-container */
+  width: 70px; /* Ensures width is the same as .herramienta-container */
+  justify-content: center; /* Horizontally center the content */
+  align-items: center; /* Vertically center the content */
+  text-align: center; /* Ensures text is centered if it wraps */
+  display: flex; /* Flexbox for alignment */
+
 }
-
-
-
 
 
 
@@ -516,13 +521,8 @@ option:checked::before {
   margin-left: 30%;
 }
 
-.title{
-  margin-left: 30%;
-}
 
-.padding{
-  padding: 30px;
-}
+
 
 .resumen-titulo{
   margin-left: 30%;
@@ -539,17 +539,17 @@ option:checked::before {
 
 .resumen-container .slick-slider .slick-prev:before,
 .resumen-container .slick-slider .slick-next:before {
-  font-size: 40px; /* Tamaño del ícono de la flecha */
+  font-size: 50px; /* Tamaño del ícono de la flecha */
   color: #1f60da; /* Color de las flechas */
   position: absolute;
 }
 
 .resumen-container .slick-slider .slick-prev {
-  left: -20px; /* Ajusta la posición si es necesario */
+  left: -10px; /* Ajusta la posición si es necesario */
 }
 
 .resumen-container .slick-slider .slick-next {
-  right: -1px; /* Ajusta la posición si es necesario */
+  right: 40px; /* Ajusta la posición si es necesario */
 }
 
 /* Estilos para el contenedor de procesos */
@@ -579,4 +579,165 @@ option:checked::before {
 
 .edit-icon:hover {
   color: #0056b3; /* Un color más oscuro al pasar el mouse */
+}
+
+
+
+
+/* Add this to your CSS file, e.g., Comentarios.css */
+
+.comentarios-container {
+  background-color: #f4f4f4; /* Light grey background for the container */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px; /* Adjust width as needed */
+  margin: 20px auto; /* Center the container */
+  margin-top: 10%;
+
+}
+
+.comentarios-container h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.form-field {
+  margin-bottom: 15px;
+  
+}
+
+.form-field textarea {
+  width: 95%; /* Full width */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  height: 100px; /* Adjustable height */
+  font-size: 14px;
+  resize: vertical; /* Allows vertical resizing */
+}
+
+.submit-button {
+  background-color: #4CAF50; /* Green background */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 16px;
+}
+
+.submit-button:hover {
+  background-color: #357c39; /* Darker shade on hover */
+}
+
+
+
+table td ul li {
+  list-style-type: none; /* This removes the bullet points */
+  text-align: center; /* Centers the text within the list item */
+}
+
+
+
+/* General Styles */
+
+
+.form-containerProcesos{
+  background-color: #ececec;
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 5px;
+  max-width: 50% !important;
+  margin-left: 5%;
+  margin-bottom: 5%;
+  float: left; /* Float the form to the left */
+  margin-top: 6%;
+}
+
+
+
+button {
+  background: #5cb85c;
+  color: #fff;
+  border: 0;
+  padding: 10px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+
+/* Table Styles */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  
+}
+
+.table thead {
+  background-color: #6a5fff;
+  color: #ffffff;
+  width: 100%;
+
+
+}
+
+
+
+.table th,
+.table td {
+  text-align: left;
+  padding: 12px;
+  border: 1px solid #ddd;
+  width: 100%;
+  text-align: center; /* Centers text in table headers and cells */
+
+
+}
+
+/* Centering buttons and inputs within the table cells */
+.table .next-butt, .table input {
+  display: block; /* Makes the element a block-level element */
+  margin: auto; /* Automatically centers block-level elements */
+}
+
+/* If there are specific classes for inputs, you can add them here */
+.table .nombres, .table .nombre, .table .herr {
+  display: block;
+  margin: auto;
+}
+
+/* Adjustments for list items within the table */
+.table td ul {
+  padding: 0;
+  margin: 0 auto; /* Centers the unordered list */
+  text-align: center;
+}
+
+.table td ul li {
+  list-style-type: none;
+  display: inline-block; /* Keeps list items inline but applies block styling */
+}
+
+
+.tools-header button.toti {
+  background: #4cae4c;
+  padding: 5px 10px;
+  color: #ffffff;
+}
+
+
+.tools-header button.toti:hover{
+  background:#3b8a3b
+}
+
+.mensaje-confirmacion {
+  text-align: center;
+  color: green;
+  font-weight: bold;
+  font-size: 16px;
 }
