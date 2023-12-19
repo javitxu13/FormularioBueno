@@ -35,6 +35,13 @@ function ProcessAutomationComponent() {
     }));
   };
 
+
+  const handleDelete = (index) => {
+    const updatedProcesosAgregados = [...procesosAgregados];
+    updatedProcesosAgregados.splice(index, 1); // Remove the process at the given index
+    updateFormData('processAutomation', { procesosAgregados: updatedProcesosAgregados });
+  };
+
   const handleNext = async() => {
     try {
       const response = await axios.post('http://localhost:5000/api/processautomation', state);
@@ -50,49 +57,43 @@ function ProcessAutomationComponent() {
       currentStage: prevState.currentStage + 1,
     }));
   };
-
-  const handleAddProcess = () => {
-    const { nombreProceso, personasIntervienen, tiempoEstimado, herramientasList, herramientasIntervienen } = state;
+  const handleAddProcess = async () => {
+    try {
+      const response = await axios.post('http://localhost:5000/api/processautomation', state);
+    
+      console.log('Data saved successfully');
   
-    // Create a new process object with herramientasIntervienen if it's not empty
-    const procesoActual = {
-      nombreProceso,
-      personasIntervienen,
-      tiempoEstimado,
-      herramientasList: [...herramientasList], // Copy the existing tools
-    };
+      // Fetch the updated data from the server (optional)
+      // const updatedData = await fetchDataFromServer();
   
-    if (herramientasIntervienen.trim() !== '') {
-      procesoActual.herramientasList.push(herramientasIntervienen);
+      // Update the procesosAgregados state with the newly added process
+      // This assumes that the response from the server contains the updated data
+      // Replace this with your actual data structure
+      // const updatedProcesosAgregados = [...updatedData];
+      
+      // Alternatively, you can directly update the state without fetching from the server
+      const updatedProcesosAgregados = [...procesosAgregados, state];
+      
+      // Update the form data context if needed
+      updateFormData('processAutomation', { procesosAgregados: updatedProcesosAgregados });
+  
+      // Clear the form or perform other actions after successful save.
+      setState({
+        currentStage: 1,
+        nombreProceso: '',
+        personasIntervienen: '',
+        tiempoEstimado: '',
+        herramientasIntervienen: '',
+        editingIndex: null,
+        showToolsInput: false,
+        herramientasList: [],
+      });
+    } catch (error) {
+      console.error('Error saving data:', error.message);
     }
-  
-    const updatedProcesosAgregados = [...procesosAgregados, procesoActual];
-    updateFormData('processAutomation', { procesosAgregados: updatedProcesosAgregados });
-  
-    setState((prevState) => ({
-      ...prevState,
-      nombreProceso: '',
-      personasIntervienen: '',
-      tiempoEstimado: '',
-      herramientasIntervienen: '', // Clear herramientasIntervienen
-      herramientasList: [], // Clear herramientasList
-    }));
   };
   
   
-
-  const handleEdit = (index) => {
-    const selectedProcess = procesosAgregados[index];
-    setState({
-      currentStage: 1,
-      nombreProceso: selectedProcess.nombreProceso,
-      personasIntervienen: selectedProcess.personasIntervienen,
-      tiempoEstimado: selectedProcess.tiempoEstimado,
-      herramientasIntervienen: '',
-      editingIndex: index,
-      herramientasList: selectedProcess.herramientasList,
-    });
-  };
 
   const handleSaveEdit = () => {
     const { nombreProceso, personasIntervienen, tiempoEstimado, herramientasList, editingIndex } = state;
@@ -308,9 +309,9 @@ function ProcessAutomationComponent() {
                       Guardar
                     </button>
                   ) : (
-                    <button className="next-butt" onClick={() => handleEdit(index)}>
-                      Editar
-                    </button>
+                     <button className="next-butt" onClick={() => handleDelete(index)}>
+                    Borrar
+                  </button>
                   )}
                 </td>
               </tr>

@@ -36,11 +36,11 @@ app.use((error, req, res, next) => {
 
 
 // Rutas de la API
-app.use('/api/infobasica', infoBasicaRoutes);
-app.use('/api/herramientassoftware', herramientasSoftwareRoutes);
-app.use('/api/processautomation', processAutomationRoutes);
-app.use('/api/tiempo', tiempoRoutes);
-app.use('/api/comentarios', comentariosRoutes);
+app.post('/api/infobasica', infoBasicaRoutes);
+app.post('/api/herramientassoftware', herramientasSoftwareRoutes);
+app.post('/api/processautomation', processAutomationRoutes);
+app.post('/api/tiempo', tiempoRoutes);
+app.post('/api/comentarios', comentariosRoutes);
 
 
 
