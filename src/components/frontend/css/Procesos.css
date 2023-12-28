@@ -86,13 +86,13 @@ option:checked::before {
     
   }
   .other-department {
-    background-color: rgb(17, 0, 255) !important; /* Un color de fondo llamativo */
+    background-color: #000000 !important; /* Un color de fondo llamativo */
     color: #ffffff !important; /* Un color de texto que contraste */
     font-weight: bold; /* Hacer el texto más grueso */
   }  
 
   .other-department.selected{
-    background-color: rgb(2, 15, 87) !important;
+    background-color: #5f5f5f !important;
   }
 
   
@@ -104,7 +104,7 @@ option:checked::before {
   }
   
   .next-button {
-    background-color: #007bff;
+    background-color: #000000;
     color: #fff;
     border: none;
     padding: 10px 20px;
@@ -116,7 +116,7 @@ option:checked::before {
   
 
   .next-button:hover {
-    background-color: #0857ac;
+    background-color: #272727;
   }
 
   /* CSS */
@@ -224,7 +224,7 @@ option:checked::before {
 .added-tools ul li {
   display: inline-block; /* Makes the background color wrap around the text */
   margin-left: 20px; /* Space between items */
-  background-color: #003d82; /* Background color */
+  background-color: #272727; /* Background color */
   color: #ffff; /* Text color */
   padding: 10px; /* Padding around the text for better visual appearance */
   margin-bottom: 10px; /* Space below each item */
@@ -260,7 +260,7 @@ option:checked::before {
 .tottis{
   margin-right: 10px;
   margin-bottom: 15px;
-  background-color: #17385a;
+  background-color: #000000;
     color: #fff;
     border: none;
     padding: 5px 10px;
@@ -272,7 +272,7 @@ option:checked::before {
 .totti{
   margin-right: 10px;
   margin-bottom: 15px;
-  background-color: #17385a;
+  background-color: #000000;
     color: #fff;
     border: none;
     padding: 5px 10px;
@@ -292,12 +292,12 @@ option:checked::before {
 }
 
 .totti:hover{
-  background-color: #007bff;
+  background-color: #5f5f5f;
   transition: 0.6s;
 }
 
 .tottis:hover{
-  background-color: #007bff;
+  background-color: #5f5f5f;
   transition: 0.6s;
 }
 
@@ -313,16 +313,16 @@ option:checked::before {
 .department-button {
   padding: 8px;
   border: 1px solid #ccc;
-  background-color: #b9cee4;
+  background-color: #000000;
   cursor: pointer;
   transition: background-color 0.3s ease;
   border-radius: 40px;
   font-size: 12px;
-  color: #000000;
+  color: #ffffff;
 }
 
 .department-button.selected {
-  background-color: #3618bd;
+  background-color: #5f5f5f;
   color: white;
 }
 
@@ -347,7 +347,7 @@ option:checked::before {
 .agregar{
   padding: 6px;
   border: 1px solid #ccc;
-  background-color:  #03274e;
+  background-color:  #5f5f5f;
   cursor: pointer;
   transition: background-color 0.3s ease;
   border-radius: 40px;
@@ -470,9 +470,9 @@ option:checked::before {
 }
 
 .herramienta-container {
-  background-color: #b9cee4;
+  background-color: #000000;
   border-radius: 50px;
-  color: #000000;
+  color: #ffffff;
   margin-bottom: 10px; /* Espacio en la parte inferior de cada contenedor */
   font-size: 13px;
   height: 30px;
@@ -488,7 +488,7 @@ option:checked::before {
 
 
 .herramienta.selected {
-  background-color: #3618bd;
+  background-color: #5f5f5f;
   color: #ffffff; /* Changes text color to white for better visibility */
   border-radius: 50px; /* Matches the border-radius of .herramienta-container */
   height: 30px; /* Ensures height is the same as .herramienta-container */

@@ -35,64 +35,78 @@ function ProcessAutomationComponent() {
     }));
   };
 
+  const handleDelete = async (index) => {
+    if (index >= 0 && index < procesosAgregados.length) {
+      let updatedProcesosAgregados = [...procesosAgregados];
+      updatedProcesosAgregados.splice(index, 1); // Eliminar el proceso
 
-  const handleDelete = (index) => {
-    const updatedProcesosAgregados = [...procesosAgregados];
-    updatedProcesosAgregados.splice(index, 1); // Remove the process at the given index
-    updateFormData('processAutomation', { procesosAgregados: updatedProcesosAgregados });
-  };
-
-  const handleNext = async() => {
-    try {
-      const response = await axios.post('http://localhost:5000/api/processautomation', state);
-   
-      console.log('Data saved successfully');
-    
-    } catch (error) {
-      console.error('Error saving data:', error.message);
+      // Actualizar el contexto y el estado local
+      updateFormData('processAutomation', { procesosAgregados: updatedProcesosAgregados });
+      setState(prevState => ({
+          ...prevState,
+          processAutomation: {
+              ...prevState.processAutomation,
+              procesosAgregados: updatedProcesosAgregados
+          }
+      }));
     }
+};
 
-    setState((prevState) => ({
-      ...prevState,
-      currentStage: prevState.currentStage + 1,
-    }));
-  };
+  
+const handleNext = async() => {
+  try {
+    // Enviar solo los procesos no borrados (actualizados en el estado y contexto)
+    const response = await axios.post('http://localhost:5000/api/processautomation', { procesosAgregados });
+    console.log('Data saved successfully');
+  } catch (error) {
+    console.error('Error saving data:', error.message);
+  }
+
+  setState((prevState) => ({
+    ...prevState,
+    currentStage: prevState.currentStage + 1,
+  }));
+};
+
+
   const handleAddProcess = async () => {
+    const { nombreProceso, personasIntervienen, tiempoEstimado, herramientasList } = state;
+  
+    // Check if all fields are empty
+    if (!nombreProceso.trim() && !personasIntervienen.trim() && !tiempoEstimado.trim() && herramientasList.length === 0) {
+      console.error('Please fill in at least one field before adding the process.');
+      return;
+    }
+  
+    // Construct the new process object
+    const newProcess = {
+      id: Date.now(), // or use uuid for more uniqueness
+      nombreProceso,
+      personasIntervienen,
+      tiempoEstimado,
+      herramientasList,
+    };
     try {
-      const response = await axios.post('http://localhost:5000/api/processautomation', state);
-    
+      // Make the API call to save the new process
+      const response = await axios.post('http://localhost:5000/api/processautomation', newProcess);
       console.log('Data saved successfully');
   
-      // Fetch the updated data from the server (optional)
-      // const updatedData = await fetchDataFromServer();
-  
-      // Update the procesosAgregados state with the newly added process
-      // This assumes that the response from the server contains the updated data
-      // Replace this with your actual data structure
-      // const updatedProcesosAgregados = [...updatedData];
-      
-      // Alternatively, you can directly update the state without fetching from the server
-      const updatedProcesosAgregados = [...procesosAgregados, state];
-      
-      // Update the form data context if needed
+      // Update the local state with the new process
+      const updatedProcesosAgregados = [...procesosAgregados, newProcess];
       updateFormData('processAutomation', { procesosAgregados: updatedProcesosAgregados });
   
-      // Clear the form or perform other actions after successful save.
+      // Reset the input fields after adding the process
       setState({
-        currentStage: 1,
+        ...state,
         nombreProceso: '',
         personasIntervienen: '',
         tiempoEstimado: '',
-        herramientasIntervienen: '',
-        editingIndex: null,
-        showToolsInput: false,
         herramientasList: [],
       });
     } catch (error) {
       console.error('Error saving data:', error.message);
     }
   };
-  
   
 
   const handleSaveEdit = () => {
@@ -136,7 +150,7 @@ function ProcessAutomationComponent() {
 
     return (
       <form className="form-containerProcesos" onSubmit={handleSubmit}>
-        <h2 className="form-title">Formulario de Automatización de Procesos</h2>
+        <h2 className="form-title">Automatización de Procesos</h2>
         <p className='parrafo'>Este formulario le permite agregar los procesos que desee, ofreciendo una personalización completa para adaptarse a las necesidades específicas de su empresa y garantizar una integración eficiente.</p>
         <div className="form-field">
           <label htmlFor="nombreProceso">Nombre del proceso</label>
@@ -231,7 +245,7 @@ function ProcessAutomationComponent() {
   
     return (
       <div className="form-containero">
-        <h2 className="form-title">Procesos Agregados:</h2>
+        <h2 className="form-title">Procesos Agregados</h2>
         <table className="table">
           <thead className="thead">
             <tr className="trouble">
@@ -309,9 +323,10 @@ function ProcessAutomationComponent() {
                       Guardar
                     </button>
                   ) : (
-                     <button className="next-butt" onClick={() => handleDelete(index)}>
-                    Borrar
+                    <button className="next-butt" onClick={() => handleDelete(index)}>
+                      Borrar
                   </button>
+
                   )}
                 </td>
               </tr>

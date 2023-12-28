@@ -1,27 +1,21 @@
-const ProcessAutomation = require('../models/ProcessAutomationModel');
-
-// const guardarProcessAutomation = async (req, res) => {
-//   try {
-//     const data = new ProcessAutomation(req.body);
-//     await data.save();
-//     res.status(201).send(data);
-//   } catch (error) {
-//     res.status(400).send(error);
-//   }
-// };
+const ProcessAutomation = require('../models/ProcessAutomation');
 
 const guardarProcessAutomation = async (req, res) => {
   try {
-    const { nombreProceso, personasIntervienen, tiempoEstimado, herramientasList } = req.body;
+    // Suponiendo que tienes un identificador único, como un ID de empresa o usuario
+    const uniqueId = req.body.uniqueId;
+    let processAutomation = await ProcessAutomation.findOne({ uniqueId });
 
-    const processAutomation = new ProcessAutomation({
-      procesosAgregados: [{
-        nombreProceso,
-        personasIntervienen: Number(personasIntervienen),
-        tiempoEstimado: Number(tiempoEstimado),
-        herramientasList: Array.isArray(herramientasList) ? herramientasList : [herramientasList],
-      }],
-    });
+    if (processAutomation) {
+      // Actualiza la lista existente de procesos
+      processAutomation.procesosAgregados = req.body.procesosAgregados;
+    } else {
+      // Crea un nuevo documento si no existe
+      processAutomation = new ProcessAutomation({
+        uniqueId,
+        procesosAgregados: req.body.procesosAgregados,
+      });
+    }
 
     await processAutomation.save();
     res.status(201).send(processAutomation);
@@ -30,6 +24,5 @@ const guardarProcessAutomation = async (req, res) => {
     res.status(400).send(error);
   }
 };
-
 
 module.exports = { guardarProcessAutomation };

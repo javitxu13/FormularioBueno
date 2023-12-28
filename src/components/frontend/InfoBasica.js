@@ -135,7 +135,7 @@ class InfoBasica extends Component {
 
     return (
       <form className="form-container" onSubmit={this.handleNext}>
-        <h2 className="form-title">Formulario de Información Básica</h2>
+        <h2 className="form-title">Información Básica</h2>
   
         <div className="form-field">
           <label htmlFor="nombre">Nombre</label>

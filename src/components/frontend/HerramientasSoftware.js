@@ -61,7 +61,7 @@ function HerramientasSoftware() {
     stateSetter(e.target.value);
   };
 
-  const descripcionHerramientas = "Simplifica la forma en que trabajas en tu empresa con estas herramientas tecnológicas que facilitan la comunicación, la colaboración y la gestión de proyectos.";
+  const descripcionHerramientas = "Automatiza tu empresa con estas herramientas.";
   const suitesDeProductividad = ["Selecciona una herramienta","Microsoft 365","Google Workspace","Zoho Workplace", "Apple iWork", "Otro"];
 
   const handleOtrasHerramientasChange = (herramienta) => {
