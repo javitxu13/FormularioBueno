@@ -1,40 +1,32 @@
-
 import React, { useState } from 'react';
 import axios from 'axios';
-
+import { Navigate } from 'react-router-dom';
 
 function Comentarios() {
     const [comentario, setComentario] = useState('');
-    const [mensajeEnviado, setMensajeEnviado] = useState(false);
-    const [buttonClicked, setButtonClicked] = useState(false); // Estado para rastrear el clic del botón
+    const [redirigir, setRedirigir] = useState(false); // Estado para controlar la redirección
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        setButtonClicked(true); // Estado del clic del botón en true
+        setRedirigir(true); // Activa la redirección inmediatamente
 
+        // Opcional: envía el comentario al servidor
         try {
-            const response = await axios.post('http://localhost:5000/api/comentarios', { texto: comentario });
-            console.log("Respuesta del servidor:", response);
-            setMensajeEnviado(true); // Actualizar cuando se envía el comentario
-            setComentario('');
-            setTimeout(() => {
-                setMensajeEnviado(false);
-                setButtonClicked(false);
-            }, 3000);
+            await axios.post('http://localhost:5000/api/comentarios', { texto: comentario });
+            console.log("Comentario enviado");
         } catch (error) {
             console.log("Error en el envío:", error);
-            setMensajeEnviado(true); // Mostrar mensaje incluso en caso de error
         }
     };
 
-    console.log("Estado del comentario:", comentario);
-    console.log("Mensaje enviado:", mensajeEnviado);
-    console.log("Botón clickeado:", buttonClicked);
-
+    // Si redirigir es true, navegar a la página de confirmación
+    if (redirigir) {
+        return <Navigate to="/confirmacion" replace={true} />;
+    }
 
     return (
         <div className="comentarios-container">
-            <h2>Comentarios adicionales</h2>
+            <h2 className='adicionales'>Comentarios adicionales</h2>
             <form onSubmit={handleSubmit}>
                 <div className="form-field">
                     <textarea
@@ -47,7 +39,6 @@ function Comentarios() {
                 <button type="submit" className="submit-button">
                     Finalizar
                 </button>
-                {buttonClicked && mensajeEnviado && <p className="mensaje-confirmacion">¡Datos enviados correctamente!</p>}
             </form>
         </div>
     );

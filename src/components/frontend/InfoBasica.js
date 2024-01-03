@@ -28,6 +28,11 @@ class InfoBasica extends Component {
   handleNext = async (e) => {
   e.preventDefault();
   // Actualizar el contexto aquí
+  if (this.state.departamentos.length === 0) {
+    alert("Por favor, selecciona al menos un departamento.");
+    return;
+  }
+  
   const { updateFormData } = this.context;
   updateFormData('infoBasica', this.state);
   try {
@@ -86,21 +91,31 @@ class InfoBasica extends Component {
   
 
   renderExtraForm() {
-    if (this.state.mostrarFormularioExtra) {
+    const { mostrarFormularioExtra, nuevoDepartamento } = this.state;
+    if (mostrarFormularioExtra) {
       return (
         <div className="extra-form">
           <input
             type="text"
-            value={this.state.nuevoDepartamento}
+            value={nuevoDepartamento}
             onChange={this.handleNuevoDepartamentoChange}
             placeholder="Nuevo Departamento"
           />
-          <button className='agregar' onClick={this.agregarNuevoDepartamento}>Agregar</button>
+          <button 
+            className={`agregar ${!nuevoDepartamento ? 'disabled' : ''}`}
+            type="button"
+            onClick={this.agregarNuevoDepartamento}
+            disabled={!nuevoDepartamento} // Opcional: deshabilitar el botón cuando no hay texto
+          >
+            Agregar
+          </button>
         </div>
       );
     }
     return null;
   }
+  
+  
 
   renderDepartmentButtons() {
     const { departamentos, departamentosAdicionales } = this.state;
@@ -129,7 +144,6 @@ class InfoBasica extends Component {
 
   renderEtapa1Form() {
     const { nombre, empresa, cargo, correoElectronico, sector, numeroEmpleados } = this.state;
-
     const sectores = ["Tecnología", "Finanzas", "Educación", "Salud", "Manufactura", "Retail", "Turismo", "Otro"];
 
 
@@ -146,6 +160,7 @@ class InfoBasica extends Component {
             value={nombre}
             onChange={this.handleChange}
             placeholder="Nombre"
+            required
           />
         </div>
 
@@ -159,6 +174,7 @@ class InfoBasica extends Component {
             value={correoElectronico}
             onChange={this.handleChange}
             placeholder="Correo Electrónico"
+            required
           />
         </div>
   
@@ -171,6 +187,7 @@ class InfoBasica extends Component {
             value={empresa}
             onChange={this.handleChange}
             placeholder="Empresa"
+            required
           />
         </div>
   
@@ -183,6 +200,7 @@ class InfoBasica extends Component {
             value={cargo}
             onChange={this.handleChange}
             placeholder="Cargo"
+            required
           />
         </div>
   
@@ -196,6 +214,7 @@ class InfoBasica extends Component {
           id="sector"
           value={sector}
           onChange={this.handleChange}
+          required
         >
           <option value="">Seleccione un sector</option>
           {sectores.map((sectorOption, index) => (
@@ -215,6 +234,7 @@ class InfoBasica extends Component {
             value={numeroEmpleados}
             onChange={this.handleChange}
             placeholder="Número de Empleados"
+            required
           />
         </div>
   

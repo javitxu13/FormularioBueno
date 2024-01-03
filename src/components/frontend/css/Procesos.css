@@ -86,13 +86,13 @@ option:checked::before {
     
   }
   .other-department {
-    background-color: #000000 !important; /* Un color de fondo llamativo */
+    background-color: #5f5f5f !important; /* Un color de fondo llamativo */
     color: #ffffff !important; /* Un color de texto que contraste */
     font-weight: bold; /* Hacer el texto más grueso */
   }  
 
   .other-department.selected{
-    background-color: #5f5f5f !important;
+    background-color: #000000 !important;
   }
 
   
@@ -104,7 +104,7 @@ option:checked::before {
   }
   
   .next-button {
-    background-color: #000000;
+    background-color: #5f5f5f;
     color: #fff;
     border: none;
     padding: 10px 20px;
@@ -116,7 +116,7 @@ option:checked::before {
   
 
   .next-button:hover {
-    background-color: #272727;
+    background-color: #000000;
   }
 
   /* CSS */
@@ -224,7 +224,7 @@ option:checked::before {
 .added-tools ul li {
   display: inline-block; /* Makes the background color wrap around the text */
   margin-left: 20px; /* Space between items */
-  background-color: #272727; /* Background color */
+  background-color: #000000; /* Background color */
   color: #ffff; /* Text color */
   padding: 10px; /* Padding around the text for better visual appearance */
   margin-bottom: 10px; /* Space below each item */
@@ -248,7 +248,7 @@ option:checked::before {
 .toti {
   margin-left: 12px;
   border-radius: 70px;
-  color: #000000;
+  color: #5f5f5f;
   background-color: rgb(218, 213, 213);
 }
 
@@ -260,7 +260,7 @@ option:checked::before {
 .tottis{
   margin-right: 10px;
   margin-bottom: 15px;
-  background-color: #000000;
+  background-color: #5f5f5f;
     color: #fff;
     border: none;
     padding: 5px 10px;
@@ -272,7 +272,7 @@ option:checked::before {
 .totti{
   margin-right: 10px;
   margin-bottom: 15px;
-  background-color: #000000;
+  background-color: #5f5f5f;
     color: #fff;
     border: none;
     padding: 5px 10px;
@@ -292,12 +292,12 @@ option:checked::before {
 }
 
 .totti:hover{
-  background-color: #5f5f5f;
+  background-color: #000000;
   transition: 0.6s;
 }
 
 .tottis:hover{
-  background-color: #5f5f5f;
+  background-color: #000000;
   transition: 0.6s;
 }
 
@@ -313,7 +313,7 @@ option:checked::before {
 .department-button {
   padding: 8px;
   border: 1px solid #ccc;
-  background-color: #000000;
+  background-color: #5f5f5f;
   cursor: pointer;
   transition: background-color 0.3s ease;
   border-radius: 40px;
@@ -322,7 +322,7 @@ option:checked::before {
 }
 
 .department-button.selected {
-  background-color: #5f5f5f;
+  background-color: #000000;
   color: white;
 }
 
@@ -347,7 +347,7 @@ option:checked::before {
 .agregar{
   padding: 6px;
   border: 1px solid #ccc;
-  background-color:  #5f5f5f;
+  background-color:  #000000;
   cursor: pointer;
   transition: background-color 0.3s ease;
   border-radius: 40px;
@@ -355,6 +355,12 @@ option:checked::before {
   color: #ffffff;
   margin-top: 10px;
   padding: 10px;
+}
+
+.agregar.disabled {
+  /* Estilos cuando el botón está 'deshabilitado' */
+  background-color: #5f5f5f;
+  color: #ffffff;
 }
 
 
@@ -376,7 +382,7 @@ option:checked::before {
 .tooltip {
   visibility: hidden;
   width: 300px;
-  background-color: black;
+  background-color: rgb(0, 0, 0);
   color: white;
   text-align: center;
   padding: 12px 10px;
@@ -470,7 +476,7 @@ option:checked::before {
 }
 
 .herramienta-container {
-  background-color: #000000;
+  background-color: #5f5f5f;
   border-radius: 50px;
   color: #ffffff;
   margin-bottom: 10px; /* Espacio en la parte inferior de cada contenedor */
@@ -488,7 +494,7 @@ option:checked::before {
 
 
 .herramienta.selected {
-  background-color: #5f5f5f;
+  background-color: #000000;
   color: #ffffff; /* Changes text color to white for better visibility */
   border-radius: 50px; /* Matches the border-radius of .herramienta-container */
   height: 30px; /* Ensures height is the same as .herramienta-container */
@@ -741,3 +747,222 @@ button {
   font-weight: bold;
   font-size: 16px;
 }
+
+
+.confirmacion-container {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  text-align: center;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.confirmacion-titulo {
+  color: #28a745;
+  margin-bottom: 20px;
+}
+
+.confirmacion-mensaje {
+  color: #333;
+  font-size: 18px;
+}
+
+
+/*INFOBASICA 
+/* Estilos para tabletas (por ejemplo, resoluciones entre 768px y 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .form-container {
+     width: 100%; /* Ajusta la anchura para tabletas */
+      margin: 0 auto; /* Centra el formulario en la pantalla */
+      padding: 15px; /* Ajusta el padding si es necesario */
+  }
+  
+  /* Aquí puedes ajustar otros elementos si es necesario */
+}
+
+/* Estilos para dispositivos móviles (por ejemplo, resoluciones menores a 768px) */
+@media (max-width: 767px) {
+  .form-container {
+      width: 100%; /* Aprovecha todo el ancho en dispositivos móviles */
+      margin: 0 auto; /* Centra el formulario en la pantalla */
+      padding: 10px; /* Reduce el padding en dispositivos móviles */
+      height: 120vh !important;
+  }
+
+  .form-field label, .form-title {
+      font-size: smaller; /* Reduce el tamaño de la fuente para móviles */
+  }
+
+  input[type="text"], input[type="email"], input[type="number"], .sector {
+      width: 95% !important; /* Asegúrate de que los campos de entrada usen todo el ancho disponible */
+  }
+
+  .department-buttons, .extra-form {
+    width: 20%;
+ }
+
+ .department-button{
+  width: 73px;
+ }
+
+}
+
+
+
+
+/*Formulario de Herramientas de Software*/
+
+/* Estilos para dispositivos móviles (por ejemplo, resoluciones menores a 768px) */
+@media (max-width: 767px) {
+  .form-container {
+      width: 95%; /* Aprovecha todo el ancho en dispositivos móviles */
+      height: 100vh !important;
+      margin: 0 auto; /* Centra el formulario en la pantalla */
+      padding: 10px; /* Reduce el padding en dispositivos móviles */
+  }
+
+  .form-field label, .form-title {
+      font-size: smaller; /* Reduce el tamaño de la fuente para móviles */
+  }
+
+}
+
+
+/* Estilos para tabletas (ejemplo: entre 768px y 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .form-containerProcesos, .form-containero {
+      max-width: 90%;
+      margin: 0 auto; /* Centra el formulario en la pantalla */
+      padding: 15px;
+  }
+
+}
+
+
+
+
+
+ /* Automatización de Procesos */
+
+@media (max-width: 767px) {
+  .form-containerProcesos {
+    max-width: 100% !important;
+    height: 100vh;
+    margin: 0 auto; /* Centra el formulario en la pantalla */
+    padding: 10px;
+  }
+
+  .parrafo {
+    width: 80%;
+  }
+
+  .form-field label,
+  .form-title {
+    font-size: smaller;
+  }
+
+  input[type="text"],
+  input[type="number"],
+  .tot,
+  .nombre,
+  .nombres,
+  .herr {
+    width: 80%;
+  }
+
+  .tools-header,
+  .added-tools,
+  .herramientas-container {
+    width: 100%;
+  }
+
+  /* Coloca la tabla debajo */
+  .table {
+    display: block;
+  }
+
+}
+
+
+
+
+
+/* Formulario de tiempo */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .form-containert {
+    /* ajustes para tabletas */
+  }
+
+  .form-field {
+    /* ajustes para tabletas */
+  }
+}
+
+
+
+/* Estilos para móviles (pantallas de hasta 768px) */
+@media (max-width: 768px) {
+  .form-containert {
+    width: 98% !important;
+    height: 100vh;
+    padding: 10px;
+    margin: 0 auto;
+  }
+
+  .form-field {
+    /* ajustes para móviles */
+    display: block;
+    width: 100%;
+  }
+
+  .date-input, .date-inputo {
+    /* ajustes para los inputs en móviles */
+    width: 91%;
+  }
+
+
+
+
+
+  /* Comentarios */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .comentarios-container {
+    /* ajustes para tabletas */
+  }
+
+  .form-field {
+    /* ajustes para tabletas */
+  }
+}
+
+/* Estilos para móviles (pantallas de hasta 768px) */
+@media (max-width: 768px) {
+  .comentarios-container {
+    width: 90%;
+    padding: 10px;
+    margin: 0 auto;
+    height: 100vh;
+  }
+
+  .adicionales{
+    font-size: smaller; /* Reduce el tamaño de la fuente para móviles */
+
+  }
+
+  .form-field {
+    /* ajustes para móviles */
+    display: block;
+    width: 100%;
+  }
+
+  textarea {
+    /* ajustes para el área de texto en móviles */
+    width: 100%;
+    resize: vertical; /* permite al usuario ajustar la altura */
+  }
+}
+}
+  /* Otros ajustes para elementos específicos en dispositivos móviles */
+

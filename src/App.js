@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Procesos from '../src/components/frontend/Procesos';
 import InfoBasica from './components/frontend/InfoBasica';
 import HerramientasSoftware from '../src/components/frontend/HerramientasSoftware';
+import Confirmacion from '../src/components/frontend/Confirmacion';
 import Comentarios from '../src/components/frontend/Comentarios';
 import Tiempo from '../src/components/frontend/Tiempo';
 import { FormDataProvider } from './components/frontend/FormDataContext';
@@ -18,8 +19,8 @@ function App() {
           <Route path="/procesos" element={<Procesos />} />
           <Route path="/presupuesto" element={<Tiempo />} />
           <Route path="/comentarios" element={<Comentarios />} />
-{/*           <Route path="/resumen" element={<Resumen />} />
- */}        </Routes>
+          <Route path="/confirmacion" element={<Confirmacion />} />
+     </Routes>
       </FormDataProvider>
     </Router>
   );

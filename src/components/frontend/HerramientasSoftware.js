@@ -30,6 +30,16 @@ function HerramientasSoftware() {
 
 
   const handleSiguienteClick = async() => {
+
+    if (!trabajaConERP || !trabajaConCRM || !trabajaConSuite ||
+      (trabajaConERP === 'Sí' && !erpSeleccionado) ||
+      (trabajaConCRM === 'Sí' && !crmSeleccionado) ||
+      (trabajaConSuite === 'Sí' && (!suiteSeleccionada || (suiteSeleccionada === 'Otro' && !suiteEspecifica))) ||
+      Object.values(otrasHerramientas).every(v => v === false)) {
+    alert("Por favor, completa todos los campos requeridos.");
+    return;
+  }
+  
     const formData = {
       trabajaConERP,
       erpSeleccionado,

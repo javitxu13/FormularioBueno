@@ -65,6 +65,7 @@ function Tiempo() {
             className="date-input"
             value={fechaInicio}
             onChange={(e) => setFechaInicio(e.target.value)}
+            required
           />
         </div>
         <div className="form-field">
@@ -74,6 +75,7 @@ function Tiempo() {
             className="date-input"
             value={fechaFinalizacion}
             onChange={(e) => setFechaFinalizacion(e.target.value)}
+            required
           />
         </div>
 
@@ -83,6 +85,7 @@ function Tiempo() {
             className="date-inputo"
             value={moneda}
             onChange={(e) => setMoneda(e.target.value)}
+            required
           >
             <option value="">Seleccione una moneda</option>
             <option value="EUR">Euros (EUR)</option>
@@ -93,6 +96,7 @@ function Tiempo() {
             <option value="AUD">Dólares australianos (AUD)</option>
             <option value="CHF">Francos suizos (CHF)</option>
             <option value="INR">Rupias indias (INR)</option>
+          
           </select>
         </div>
         <div className="form-field">
@@ -101,6 +105,7 @@ function Tiempo() {
             className="date-inputo"
             value={presupuestoRango}
             onChange={(e) => setPresupuestoRango(e.target.value)}
+            required
           >
             <option value="">Seleccione un rango</option>
             <option value="500-1000">500 - 1000</option>

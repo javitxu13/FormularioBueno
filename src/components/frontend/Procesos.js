@@ -54,6 +54,12 @@ function ProcessAutomationComponent() {
 
   
 const handleNext = async() => {
+
+  if (procesosAgregados.length === 0) {
+    alert("Por favor, añade al menos un proceso antes de continuar.");
+    return;
+  }
+  
   try {
     // Enviar solo los procesos no borrados (actualizados en el estado y contexto)
     const response = await axios.post('http://localhost:5000/api/processautomation', { procesosAgregados });
@@ -72,9 +78,8 @@ const handleNext = async() => {
   const handleAddProcess = async () => {
     const { nombreProceso, personasIntervienen, tiempoEstimado, herramientasList } = state;
   
-    // Check if all fields are empty
-    if (!nombreProceso.trim() && !personasIntervienen.trim() && !tiempoEstimado.trim() && herramientasList.length === 0) {
-      console.error('Please fill in at least one field before adding the process.');
+    if (!nombreProceso.trim() || !personasIntervienen.trim() || !tiempoEstimado.trim() || herramientasList.length === 0) {
+      alert("Por favor, completa todos los campos antes de añadir el proceso.");
       return;
     }
   
@@ -151,7 +156,7 @@ const handleNext = async() => {
     return (
       <form className="form-containerProcesos" onSubmit={handleSubmit}>
         <h2 className="form-title">Automatización de Procesos</h2>
-        <p className='parrafo'>Este formulario le permite agregar los procesos que desee, ofreciendo una personalización completa para adaptarse a las necesidades específicas de su empresa y garantizar una integración eficiente.</p>
+        <p className='parrafo'>Añade tantos procesos como desees automatizar.</p>
         <div className="form-field">
           <label htmlFor="nombreProceso">Nombre del proceso</label>
           <input
@@ -163,7 +168,7 @@ const handleNext = async() => {
           />
         </div>
         <div className="form-field">
-          <label htmlFor="nombreProceso">Cantidad de personas que intervienen</label>
+          <label htmlFor="nombreProceso">Número de personas que intervienen</label>
           <input
             className="date-input"
             type="number"
